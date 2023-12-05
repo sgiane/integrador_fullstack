@@ -1,5 +1,22 @@
 # integrador_fullstack
 
-## Proyecto Integrador Curso NodeJS (Codo a Codo)
+Proyecto Integrador de curso FullStack NodeJS. Desarrollo de tienda virtual FunkoShop.
 
-### Desarrollo Tiende de Funkos (Funkoshop)
+## Grupo de Trabajo
+
+* Stefany
+* Judit
+* Sofia
+* Greta
+
+### Instalación
+
+```
+npm install
+```
+
+### Ejecutar
+
+```
+npm run dev
+```
