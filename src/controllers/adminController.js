@@ -1,9 +1,13 @@
-const adminController = {
-    admin:(req, res) => res.send("Admin"),
-    create:(req, res) => res.send("Create"),
-    edit:(req, res) => res.send("Edit"),
-    delete:(req, res) => res.send("Delete"),
-}
+
+//CONTROLADORES DE ADMIN
+
+const admin = (req, res) => res.render('viewsAdmin/admin', {layout: "layouts/layoutAdmin"});
+const create = (req, res) => res.render('viewsAdmin/create', {layout: "layouts/layoutAdmin"});
+const edit = (req, res) => res.render('viewsAdmin/edit', {layout: "layouts/layoutAdmin"});
 
 
-module.exports = adminController;
+module.exports = {
+    admin,
+    create,
+    edit,
+};

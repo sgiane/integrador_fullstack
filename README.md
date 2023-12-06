@@ -13,6 +13,11 @@ Proyecto Integrador de curso FullStack NodeJS. Desarrollo de tienda virtual Funk
 
 ```
 npm install
+npm install express
+npm install -D nodemon
+npm install method-override
+npm install ejs
+nom install express-ejs-layouts
 ```
 
 ### Ejecutar

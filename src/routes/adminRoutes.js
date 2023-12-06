@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router();
 const adminController = require("../controllers/adminController");
 
-router.get('/admin',adminController.admin);
-router.get('/admin/create',adminController.create);
-router.post('/admin/create',adminController.create);
-router.get('/admin/edit/:id',adminController.edit);
-router.put('/admin/edit/:id',adminController.edit);
-router.delete('/admin/delete/:id',adminController.delete);
+//RUTAS DE ADMIN
+
+
+router.get('/admin', adminController.admin);
+router.get('/admin/create', adminController.create);
+router.get('/admin/edit', adminController.edit);
+// router.put('/admin/edit/:id',adminController.edit);
+// router.delete('/admin/delete/:id',adminController.delete);
 // - GET -> /admin
 // - GET -> /admin/create
 // - POST -> /admin/create
