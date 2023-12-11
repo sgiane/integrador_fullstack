@@ -1,9 +1,12 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
 const methosOverride = require("method-override");
 
+const sequelize = require("./config/connect");
 
 app.use(express.static(__dirname + "/public"));
 
@@ -39,4 +42,12 @@ app.use((req, res, next) => {
 
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(PORT, () => {
+    try {
+        sequelize.authenticate();
+    } catch (error) {
+        console.log(error);
+    }
+    
+    console.log(`http://localhost:${PORT}`)
+});
