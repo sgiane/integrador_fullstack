@@ -1,3 +1,6 @@
+const model = require('../../models/productModel');
+// const model = require('../../models/userModel');
+
 
 //CONTROLADORES DE ADMIN
 
