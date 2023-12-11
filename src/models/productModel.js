@@ -26,7 +26,7 @@ const Producto = sequelize.define('product', {
         allowNull: false,
     },
     sku: { 
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     dues: { 
@@ -47,6 +47,7 @@ const Producto = sequelize.define('product', {
     },
     license_id: { 
         type: DataTypes.INTEGER,
+        
         allowNull: false,
     },
     category_id: { 
