@@ -1,3 +1,4 @@
+const modelUser = require('../models/userModel');
 
 //CONTROLADORES DE AUTENTICACIÓN
 
