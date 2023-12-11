@@ -6,7 +6,7 @@ const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
 const methosOverride = require("method-override");
 
-const sequelize = require("./config/connect");
+const sequelize = require("./src/config/connect");
 
 app.use(express.static(__dirname + "/public"));
 
