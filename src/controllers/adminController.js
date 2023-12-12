@@ -9,10 +9,11 @@ const admin =  async (req, res) => {
         const productos = await model.findAll();
 
     console.log(productos);
-    res.send("Listado de Productos");
-    // res.render('viewsAdmin/admin', {layout: "layouts/layoutAdmin"}, { productos });
+    // res.send("Listado de Productos");
+    res.render('viewsAdmin/admin', { productos, layout: "layouts/layoutAdmin"});
     } catch (error) {
         console.log(error);
+        res.status(500).send(error);
     }
 };
 
