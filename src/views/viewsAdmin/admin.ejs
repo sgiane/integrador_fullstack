@@ -10,7 +10,7 @@
             <h1 class="admin__title">LISTADO DE PRODUCTOS</h1>
             <div class="admin__add">
                 <p class="admin__agregar">AGREGAR</p>
-                <img src="../multimedia/icons/ico-agregar.png" alt="Icono agregar">
+                <a href="/admin/create"><img src="../multimedia/icons/ico-agregar.png" alt="Icono agregar"></a>
             </div>
         </div>
  
@@ -32,7 +32,7 @@
                         <td class="admin__table-td"><%= producto.product_name %></td>
                         <td class="admin__table-td"><%= producto.license_id %></td>
                         <td class="admin__table-td">
-                            <a href="/admin/edit"><img src="../multimedia/icons/edit_pencil.svg" alt="editar"></td></a>
+                            <a href="/admin/edit/<%= producto.id %>"><img src="../multimedia/icons/edit_pencil.svg" alt="editar"></td></a>
                         <td class="admin__table-td">
                             <img src="../multimedia/icons/delete_trash.svg" alt="delete_trash"></td>
                     </tr>
