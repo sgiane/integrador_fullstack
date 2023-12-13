@@ -12,10 +12,10 @@ const License = sequelize.define('license', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    license_image: { 
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+    // license_image: { 
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
 });
 
  //Sincronización
