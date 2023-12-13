@@ -33,18 +33,18 @@ const Producto = sequelize.define('product', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    image_front: { 
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    image_back: { 
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    create_time: { 
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
+    // image_front: { 
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
+    // image_back: { 
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
+    // create_time: { 
+    //     type: DataTypes.DATE,
+    //     allowNull: false,
+    // },
     license_id: { 
         type: DataTypes.INTEGER,
         
