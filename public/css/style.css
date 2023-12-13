@@ -847,7 +847,7 @@ footer {
 .grid-container {
    display: grid;
    grid-template-columns: 300px 2fr;
-   grid-template-rows: 120px 1fr 250px;
+   grid-template-rows: 1fr;
    grid-template-areas:
       "header header"
       "aside main"
