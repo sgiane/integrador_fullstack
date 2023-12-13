@@ -1,67 +1,55 @@
-<main class="container contenedor__carrito">
-    <section class="carrito">
-        <h1>CARRITO DE COMPRAS</h1>
-        <div class="carrito__columnas carrito__bordes">
-            <p>DETALLE DEL PRODUCTO</p>
-            <p>CANTIDAD</p>
-            <p>TOTAL</p>
+<main class="container">
+        
+
+    <section class="car__compras">
+        <h1 class="car__comprastitle">CARRITO DE COMPRAS</h1>
+        <div class="subtitulo__carrito">
+            <p class="car__title-detail">DETALLE DEL PRODUCTO</p>
+            <p class="car__title-cant">CANTIDAD</p>
+            <p class="car__title-total">TOTAL</p>
         </div>
-        <article class="carrito__item carrito__bordes">
-            <div>
-                <img src="../multimedia/star-wars/baby-yoda-1.webp" alt="BABY YODA">
+        <div class="car__item-detail">
+            <picture class="card__item-img">
+                <img class="car__item-img--front" src="../multimedia/star-wars/baby-yoda-1.webp"
+                    alt="Figura coleccionable de Funko Baby Yoda">
+                <img class="car__item-img--back" src="../multimedia/star-wars/baby-yoda-box.webp"
+                    alt="Figura coleccionable de Funko Baby Yoda Box">
+            </picture>
+            <div class="car__item-description">
+                <h3 class="car__item-name">BABY YODA BLUEBALL</h3>
+                <p class="car__item-licence">STAR WARS</p>
+                <p class="car__item-price">Precio unitario: $1.799,99</p>
             </div>
-            <div>
-                <h3>BABY YODA BLUEBALL</h3>
-                <p>STAR WARS</p>
-                <br>
-                <p>Precio unitario: $1799,99</p>
-            </div>
-            <div>
-                <input type="number" class="carrito__input" name="number1" id="number1" placeholder="0">
-            </div>
-            <div>
-                <p>$3599,98</p>
-            </div>
-            <div>
-                <img src="../multimedia/icons/cancelar.png" alt="icono de cancelar"> 
-            </div>
-        </article>
-        <article class="carrito__item carrito__bordes">
-            <div>
-                <img src="../multimedia/pokemon/pidgeotto-1.webp" alt="PIDGEOTTO">
-            </div>
-            <div>
-                <h3>PIDGEOTTO</h3>
-                <p>POKEMON</p>
-                <br>
-                <p>Precio unitario: $1799,99</p>
-            </div>
-            <div>
-                <input type="number" class="carrito__input" name="number2" id="number2" placeholder="0">
-            </div>
-            <div>
-                <p>$1799,99</p>
-            </div>
-            <div>
-                <img src="../multimedia/icons/cancelar.png" alt="icono de cancelar">
-            </div>
-        </article>
+
+            <input class="car__item-num" type="number" name="0" id="number1" placeholder="0">
+            <p class="car__item-price-total">$3599,98</p>
+            <img class="car__item-ico" src="../multimedia/icons/cancelar.png" alt="icono de cancelar">
+        </div>
+
+
+
     </section>
-    <section class="resumen">
-        <h1>RESUMEN</h1>
-        <div class="carrito__bordes">
-            <label>CANTIDAD DE ELEMENTOS</label>
-            <label class="valor_resumen">3</label>
-            <br><br>
-            <label>SUBTOTAL</label>
-            <label class="valor_resumen">$ 5.399,97</label>
-            <br><br>
-            <label>ENVÍO</label>
-            <label class="valor_resumen">$ 0,00</label>
-            <br><hr><br>
-            <label class="total">TOTAL</label>
-            <label class="valor_resumen total">$ 5.399,97</label>
+
+    <section class="car__resume">
+    
+        <h1 class="car__resume-title">RESUMEN</h1>
+
+        <div class="resumen__carrito">
+            <label class="car__label" for="elementos">CANTIDAD DE ELEMENTOS</label>
+            <input class="car__input" type="text" name="elementos" id="elementos"  placeholder="0">
+
+            <label class="car__label" for="subtotal">SUBTOTAL</label>
+            <input class="car__input" type="text" name="subtotal" id="subtotal" placeholder="0">
+      
+            <label class="car__label" for="envio">ENVÍO</label>
+            <input class="car__input" type="text" name="envio" id="envio" placeholder="0">
+          <hr>
+            <label class="car__label" for="elementos">TOTAL</label>
+            <input class="car__input" type="text" name="total" id="total" placeholder="0">
         </div>
-        <button>IR A PAGAR</button>
+        <div class="car__btn">
+            <button class="btn">IR A PAGAR</button>
+        </div>
+
     </section>
 </main>
