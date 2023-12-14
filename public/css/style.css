@@ -255,6 +255,7 @@ header {
    grid-template-columns: 1fr 1fr;
    align-items: center;
    padding: var(--spacing-16) 0;
+   margin-bottom: var(--spacing-48);
 }
 
 .collection:nth-child(2) .collection__img {
@@ -310,7 +311,7 @@ header {
 
 .slider__title {
    font-family: var(--font-alternativa);
-   font-size: var(--font-display);
+   font-size: var(--font-display2);
    padding-bottom: var(--spacing-16);
 }
 
@@ -377,10 +378,10 @@ header {
 }
 
 .card-item__tag {
-   font-size: var(--font-xsmall);
+   font-size: 1.2em;
    background-color: var(--red-solid);
    color: var(--light-solid);
-   padding: var(--spacing-8) var(--spacing-12);
+   padding: .5em;
    right: 0;
    position: absolute;
 }
@@ -531,6 +532,7 @@ form>* {
    font-weight: 400;
    border: solid 1px var(--dark-solid);
    border-radius: 5px;
+   padding: var(--spacing-8);
 }
 
 input[type="file"] {
@@ -1171,6 +1173,7 @@ hr {
 
 .item__card {
    margin-top: var(--spacing-68);
+   
 }
 
 .item__card-yoda {
@@ -1178,6 +1181,7 @@ hr {
    grid-template-columns: 1fr 1fr;
    align-items: center;
    padding: var(--spacing-16) 0;
+   margin-bottom: var(--spacing-48);
 }
 
 .item-card__licence {
@@ -1185,7 +1189,7 @@ hr {
 }
 
 .item-card__name {
-   font-size: var(--font-jumbo);
+   font-size: var(--font-xlarge);
 }
 
 .item-card__description {
@@ -1193,7 +1197,7 @@ hr {
 }
 
 .item-card__price {
-   font-size: var(--font-jumbo);
+   font-size: var(--font-xlarge);
 }
 
 .item-card__cuotas {
@@ -1823,6 +1827,7 @@ input[type=number] {
       align-items: center;
       padding: 0;
       margin: var(--spacing-12);
+      margin-bottom: var(--spacing-68);
       gap: var(--spacing-20);
    }
 
@@ -1890,7 +1895,7 @@ input[type=number] {
       align-items: center;
    }
 
-   .slider .slider__title {
+   .slider__title {
       font-size: var(--font-large)
    }
 
