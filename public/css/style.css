@@ -772,6 +772,13 @@ input[type="file"] {
    font-size: var(--font-display2);
 }
 
+.btn__delete {
+   border: none;
+   background-color: var(--light-solid);
+   margin: 0;
+   
+}
+
 /*-------------------------------------------------------------------------------------*/
 
 /* INICIO CONTACTO */

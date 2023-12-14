@@ -1,7 +1,8 @@
+const fs = require("fs");
 const { DataTypes } = require('sequelize');
 const path = require("path");
 const sharp = require("sharp");
-const { validatorResult } = require("express-validator");
+const { validationResult } = require("express-validator");
 
 const modelProduct = require('../models/productModel');
 const modelCategory = require('../models/categoryModel');
@@ -69,7 +70,9 @@ const createProduct = async (req, res) => {
         res.send(error);
     }
 };
-//---------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------
+//EDIT
+
 //Mostrar la vista del formulario
 
 const edit = async (req, res) => {
@@ -102,7 +105,7 @@ const edit = async (req, res) => {
         // const categories = await modelCategory.findAll();
         // const licenses = await modelCategory.findAll();
 
-        return res.render("/admin", {
+        return res.render("/admin/create", {
           // categories,
           // licenses,
           values: req.body,
@@ -131,7 +134,7 @@ const edit = async (req, res) => {
           .toFile(
             path.resolve(
               __dirname,
-              `../../public/upload/producto_${producto.id}.webp`
+              `../../public/upload/producto_${req.params.id}.webp`
             )
           );
       }
@@ -143,7 +146,41 @@ const edit = async (req, res) => {
     }
   };
   
-// const edit = (req, res) => res.render('viewsAdmin/edit', {layout: "layouts/layoutAdmin"});
+//------------------------------------------------------------------
+//DELETE
+
+const  destroy = async (req, res) => {
+  console.log(req.params);
+
+  try {
+    const destroyed = await modelProduct.destroy({
+      where:{
+        id: req.params.id,
+      },
+    });
+      console.log(destroyed);
+    if (destroyed == 1) {
+      fs.unlink(
+        path.resolve(__dirname, `../../public/upload/producto_${req.params.id}.webp`)
+      ),
+      (error) => {
+        if (error) {
+          console.log(error);
+        }
+      };
+    }
+
+    res.redirect("/admin");
+
+
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+}
+
+
+
 
 
 module.exports = {
@@ -152,4 +189,5 @@ module.exports = {
     createProduct,
     edit,
     update,
+    destroy,
 };
