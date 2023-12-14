@@ -828,9 +828,9 @@ input[type="file"] {
 
 /*ESTILOS SHOP*/
 /*ASIDE*/
-header {
+/* header {
    grid-area: header;
-}
+} */
 
 aside {
    grid-area: aside;
@@ -840,18 +840,17 @@ main {
    grid-area: main;
 }
 
-footer {
+/* footer {
    grid-area: footer;
-}
+} */
 
-.grid-container {
+.main-containershop {
    display: grid;
    grid-template-columns: 300px 2fr;
    grid-template-rows: 1fr;
    grid-template-areas:
-      "header header"
       "aside main"
-      "footer footer";
+      
 }
 
 .filter__item {
@@ -1918,15 +1917,15 @@ input[type=number] {
 
    /* RESPONSIVE SHOP */
 
-   .grid-container {
+   .main-containershop {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 120px 200px 1fr 250px;
+      grid-template-rows: 200px 1fr;
       grid-template-areas:
-         "header header header"
-         "aside aside aside"
-         "main main main"
-         "footer footer footer";
+         
+         "aside aside "
+         "main main"
+         
 
    }
 

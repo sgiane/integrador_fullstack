@@ -1,57 +1,64 @@
-<aside class="filter__item">
-    <form  action="" method="post">
-        <div class="filtro">
-        <div class="filter__search">
-            <h3 class="filter__title">BUSCAR</h3>
-            <input class="input__search" type="text" name="busqueda" id="busqueda" placeholder="Item o categoría" />
-        </div>
-        <div class="filter__order">
-            <h3 class="filter__title">ORDENAR POR</h3>
-            <select class="select__order" name="orden" id="orden">
-                <option class="select__order-mayor" value="mayor"> Mayor a menor</option>
-                <option class="select__order-menor" value="menor"> Menor a mayor</option>
-            </select>
-        </div>
-    </div>
-        <div class="filter__price">
-            <h3 class="filter__title">PRECIO</h3>
-        <div class="precio">
-            <div>
-            <label class="label__filter-price" for="min">MIN</label>
-            <input class="input__price" type="number" name="min" id="min" placeholder="0" />
-            </div>
-            <div>
-            <label class="label__filter-price" for="max">MAX</label>
-            <input class="input__price" type="number" name="max" id="max" placeholder="0" />
-        </div>
-            </div>
-        </div>
-    
-        <div class="filter__check">
-            <h3 class="filter__title">FILTRAR</h3>
-            <div class="filter__check-item">
-            <input class="input__check" type="checkbox" name="nuevos" id="nuevos" value="1" />
-                <label class="label__filter-check" for="nuevos">NUEVOS</label>
-            </div>
-            <div class="filter__check-item">
-            <input class="input__check" type="checkbox" name="ofertas" id="ofertas" value="2" />
-                <label class="label__filter-check" for="ofertas">OFERTAS</label>
-            </div>
-            <div class="filter__check-item">
-            <input class="input__check" type="checkbox" name="edicion especial" id="edicion especial" value="3" />
-                <label class="label__filter-check" for="edicion especial">EDICIÓN ESPECIAL</label>
-            </div>
-            <div class="filter__check-item">
-            <input class="input__check" type="checkbox" name="favoritos" id="favoritos" value="4" />
-                <label class="label__filter-check" for="favoritos">FAVORITOS</label>
-            </div>
-        </div>
-    </form>
 
-</aside>
 <!--fin aside-->
 <!--inicio main-->
 <main class="main-containershop">
+
+    <aside class="filter__item">
+        <form  action="" method="post">
+            <div class="filtro">
+            <div class="filter__search">
+                <h3 class="filter__title">BUSCAR</h3>
+                <input class="input__search" type="text" name="busqueda" id="busqueda" placeholder="Item o categoría" />
+            </div>
+            <div class="filter__order">
+                <h3 class="filter__title">ORDENAR POR</h3>
+                <select class="select__order" name="orden" id="orden">
+                    <option class="select__order-mayor" value="mayor"> Mayor a menor</option>
+                    <option class="select__order-menor" value="menor"> Menor a mayor</option>
+                </select>
+            </div>
+        </div>
+            <div class="filter__price">
+                <h3 class="filter__title">PRECIO</h3>
+            <div class="precio">
+                <div>
+                <label class="label__filter-price" for="min">MIN</label>
+                <input class="input__price" type="number" name="min" id="min" placeholder="0" />
+                </div>
+                <div>
+                <label class="label__filter-price" for="max">MAX</label>
+                <input class="input__price" type="number" name="max" id="max" placeholder="0" />
+            </div>
+                </div>
+            </div>
+        
+            <div class="filter__check">
+                <h3 class="filter__title">FILTRAR</h3>
+                <div class="filter__check-item">
+                <input class="input__check" type="checkbox" name="nuevos" id="nuevos" value="1" />
+                    <label class="label__filter-check" for="nuevos">NUEVOS</label>
+                </div>
+                <div class="filter__check-item">
+                <input class="input__check" type="checkbox" name="ofertas" id="ofertas" value="2" />
+                    <label class="label__filter-check" for="ofertas">OFERTAS</label>
+                </div>
+                <div class="filter__check-item">
+                <input class="input__check" type="checkbox" name="edicion especial" id="edicion especial" value="3" />
+                    <label class="label__filter-check" for="edicion especial">EDICIÓN ESPECIAL</label>
+                </div>
+                <div class="filter__check-item">
+                <input class="input__check" type="checkbox" name="favoritos" id="favoritos" value="4" />
+                    <label class="label__filter-check" for="favoritos">FAVORITOS</label>
+                </div>
+            </div>
+        </form>
+    
+    </aside>
+
+
+
+
+
 <section class= "main__cards">
 <!--starwars-->   
        <article class="card-1" >
