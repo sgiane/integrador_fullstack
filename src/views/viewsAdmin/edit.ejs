@@ -1,25 +1,37 @@
 <main class="container">
     <section class="form__edit">
+        <% if (typeof errors != 'undefined') { %>
+            <ul>
+              <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+              <% }) %>
+            </ul>
+            <% } %>
+
         <form action="" method="post">
             <h1 class="edit__title oneline">EDITAR ITEM</h1>
 
             <div class="select__categoria select__cat-edit">
                 <label class="label__select label__edit" for="categoria">Categoria:</label>
-                <select class="select__item select__edit" name="categoria" id="categoria">
-                    <option class="select__option" value="">Figuras</option>
-                    <option class="select__option" value="">Star Wars</option>
-                    <option class="select__option" value="">Pokemon</option>
-                    <option class="select__option" value="">Harry Potter</option>
+                <select class="select__item select__edit" name="category_name" id="categoria">
+                    <% categories.forEach(category => { %>
+                        <option 
+                          value="<%= category.id %>" 
+                          <%= category.id == values.category_id ? "selected" : "" %> 
+                        ><%= category.category_name %></option>
+                        <% }) %>
                 </select>
             </div>
 
             <div class="select__licencia select__lic-edit">
                 <label class="label__select label__edit" for="licencia">Licencia:</label>
-                <select class="select__item select__edit" name="licencia" id="licencia">
-                    <option class="select__option" value="">Naruto Shipudden</option>
-                    <option class="select__option" value="">Star Wars</option>
-                    <option class="select__option" value="">Pokemon</option>
-                    <option class="select__option" value="">Harry Potter</option>
+                <select class="select__item select__edit" name="license_id" id="licencia">
+                    <% licenses.forEach(license => { %>
+                        <option 
+                          value="<%= license.id %>" 
+                          <%= license.id == values.license_id ? "selected" : "" %> 
+                        ><%= license.license_name %></option>
+                        <% }) %>
                 </select>
             </div>
             <div class="nom__producto nom__producto-edit oneline">
@@ -52,25 +64,26 @@
             </div>
 
             <div class="cuota__item cuota__item-edit">
-                <label class="label__input" for="cuotas">Cuotas:</label>
-                <select class="select__item__cuota" name="cuotas" id="cuotas">
-
-                    <option class="select__option" value="">6 cuotas sin intereses</option>
-                    <option class="select__option" value="">12 cuotas sin intereses</option>
+                <label class="label__input" for="dues">Cuotas:</label>
+                <select class="select__item__cuota" name="dues" id="dues">
+                    <option class="select__option" value="">3</option>
+                    <option class="select__option" value="">6</option>
+                    <option class="select__option" value="">12</option>
                 </select>
             </div>
 
             <div class="img__item oneline">
-                <label class="label__input" for="imagenes">Imágenes:</label>
-                <input class="input__item__file" type="file">
+                <label class="label__input" for="imagen">Imágenes:</label>
+                <input class="input__item__file" type="file" id="imagen" name="imagen" accept="image/*" />
             </div>
             <div class="imagenes__edit">
+                
                 <figure class="figure__edit">
-                    <img src="../multimedia/pokemon/charmander-1.webp" alt="">
+                    <img class="image-edit" src="/upload/producto_<%= values.id %>.webp" alt="Imagen de Figura coleccionable<%= values.product_name %>" />
                     <figcaption>Frente</figcaption>
                 </figure>
                 <figure class="figure__edit">
-                    <img class="image-edit" src="../multimedia/pokemon/charmander-box.webp" alt="">
+                    <img class="image-edit" src="/upload/producto_<%= values.id %>.webp" alt="Imagen de Figura coleccionable<%= values.product_name %>" />
                     <figcaption>Dorso</figcaption>
                 </figure>
             </div>

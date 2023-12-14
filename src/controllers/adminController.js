@@ -45,16 +45,7 @@ const create = async (req, res) =>
 
 //Crea nuevo producto
 const createProduct = async (req, res) => {
-    // console.log(req.body, req.file);
 
-    // const errors = validatorResult(req);
-
-    // if (!errors.isEmpty()){
-    //     return res.render("admin/create", {
-    //         values: req.body,
-    //         errors: errors.array(),
-    //     });
-    // } 
     
     try {
         const producto = await modelProduct.create(req.body);
@@ -79,12 +70,16 @@ const createProduct = async (req, res) => {
     }
 };
 //---------------------------------------------------------------------------------------------
+//Mostrar la vista del formulario
+
 const edit = async (req, res) => {
     try {
       const producto = await modelProduct.findByPk(req.params.id);
   
       if (producto) {
-        res.render('viewsAdmin/edit', {layout: "layouts/layoutAdmin", values: producto } );
+        const categories = await modelCategory.findAll();
+        const licenses = await modelLicense.findAll();
+        res.render('viewsAdmin/edit', { layout: "layouts/layoutAdmin", values: producto, categories, licenses } );
       } else {
         res.status(404).send("No existe el producto");
       }
@@ -94,20 +89,36 @@ const edit = async (req, res) => {
     }
   };
 
+//Editar el producto
+
   const update = async (req, res) => {
     console.log(req.params, req.body);
   
     const errors = validationResult(req);
   
     if (!errors.isEmpty()) {
-      return res.render("admin/create", {
-        values: req.body,
-        errors: errors.array(),
-      });
+      try {
+        
+        // const categories = await modelCategory.findAll();
+        // const licenses = await modelCategory.findAll();
+
+        return res.render("/admin", {
+          // categories,
+          // licenses,
+          values: req.body,
+          errors: errors.array(),
+        });
+
+      } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+      }     
     }
+
   
     try {
-      const count = await model.update(req.body, {
+      // console.log(req.body);
+      const count = await modelProduct.update(req.body, {
         where: {
           id: req.params.id,
         },
@@ -120,12 +131,12 @@ const edit = async (req, res) => {
           .toFile(
             path.resolve(
               __dirname,
-              `../../../public/uploads/productos/producto_${req.params.id}.jpg`
+              `../../public/upload/producto_${producto.id}.webp`
             )
           );
       }
   
-      res.redirect("/admin/productos");
+      res.redirect("/admin");
     } catch (error) {
       console.log(error);
       res.send(error);
