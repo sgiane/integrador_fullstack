@@ -8,12 +8,15 @@
             </ul>
             <% } %>
 
-        <form action="" method="post">
+        <form action="/admin/<%= values.id %>?_method=PUT"
+            method="post" 
+            enctype="multipart/form-data">
+
             <h1 class="edit__title oneline">EDITAR ITEM</h1>
 
             <div class="select__categoria select__cat-edit">
                 <label class="label__select label__edit" for="categoria">Categoria:</label>
-                <select class="select__item select__edit" name="category_name" id="categoria">
+                <select class="select__item select__edit" name="category_id" id="categoria">
                     <% categories.forEach(category => { %>
                         <option 
                           value="<%= category.id %>" 
@@ -36,31 +39,31 @@
             </div>
             <div class="nom__producto nom__producto-edit oneline">
                 <label class="label__input" for="nombre del producto">Nombre del Producto:</label>
-                <input class="input__item" type="text" placeholder="Kakashi Hatake shippuden Saga" value="<%= typeof values != 'undefined' ? values.product_name : '' %>">
+                <input class="input__item" type="text" name="product_name" placeholder="Kakashi Hatake shippuden Saga" value="<%= typeof values != 'undefined' ? values.product_name : '' %>">
             </div>
             <div class="descripcion oneline">
-                <textarea class="textarea__descripcion" name="" id="" cols="30" rows="10"
+                <textarea class="textarea__descripcion" name="product_description" id="" cols="30" rows="10"
                     placeholder="Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden invocando chidori."><%= typeof values != 'undefined' ? values.product_description : '' %></textarea>
             </div>
 
             <div class="sku__item sku__item-edit">
                 <label class="label__input" for="sku">SKU:</label>
-                <input class="input__item input__sku" type="text" placeholder="NARO01012" value="<%= typeof values != 'undefined' ? values.sku : '' %>">
+                <input class="input__item input__sku" type="text" name="sku" placeholder="NARO01012" value="<%= typeof values != 'undefined' ? values.sku : '' %>">
             </div>
 
             <div class="precio__item precio__item-edit">
-                <label class="label__input" for="precio">Precio:</label>
-                <input class="input__item input__precio" type="text" placeholder="$1.799,00" value="<%= typeof values != 'undefined' ? values.price : '' %>">
+                <label class="label__input" for="price">Precio:</label>
+                <input class="input__item input__precio" type="text" name="price" placeholder="$1.799,00" value="<%= typeof values != 'undefined' ? values.price : '' %>">
             </div>
 
             <div class="stock__item stock__item-edit">
                 <label class="label__input" for="stock">Stock:</label>
-                <input class="input__item input__stock" type="text" placeholder="10" value="<%= typeof values != 'undefined' ? values.stock : '' %>">
+                <input class="input__item input__stock" type="text" name="stock" placeholder="10" value="<%= typeof values != 'undefined' ? values.stock : '' %>">
             </div>
 
             <div class="descuento__item desc__item-edit">
-                <label class="label__input" for="descuento">Descuento:</label>
-                <input class="input__item" type="text" placeholder="10%" value="<%= typeof values != 'undefined' ? values.discount : '' %>">
+                <label class="label__input" for="discount">Descuento:</label>
+                <input class="input__item" type="text" name="discount" placeholder="10%" value="<%= typeof values != 'undefined' ? values.discount : '' %>">
             </div>
 
             <div class="cuota__item cuota__item-edit">
@@ -77,7 +80,6 @@
                 <input class="input__item__file" type="file" id="imagen" name="imagen" accept="image/*" />
             </div>
             <div class="imagenes__edit">
-                
                 <figure class="figure__edit">
                     <img class="image-edit" src="/upload/producto_<%= values.id %>.webp" alt="Imagen de Figura coleccionable<%= values.product_name %>" />
                     <figcaption>Frente</figcaption>

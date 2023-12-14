@@ -33,11 +33,17 @@
                         <td class="admin__table-td"><%= producto.license_id %></td>
                         <td class="admin__table-td">
                             <a href="/admin/edit/<%= producto.id %>"><img src="../multimedia/icons/edit_pencil.svg" alt="editar"></td></a>
+
+
                         <td class="admin__table-td">
-                            <img src="../multimedia/icons/delete_trash.svg" alt="delete_trash"></td>
+                            <form action="/admin/<%= producto.id %> ?_method=DELETE" method="post">
+                                <button class="btn__delete" type=""><img src="../multimedia/icons/delete_trash.svg" alt="delete_trash"></button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>
         </table>
     </section>
 </main>
+

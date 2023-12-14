@@ -20,19 +20,17 @@ app.use(express.urlencoded({extended:false}));
 app.use(methosOverride("_method"));
 
 const mainRoutes = require('./src/routes/mainRoutes');
-app.use(mainRoutes);
-
 const shopRoutes = require('./src/routes/shopRoutes');
-app.use(shopRoutes);
-
 const adminRoutes = require('./src/routes/adminRoutes');
-app.use(adminRoutes);
-
 const authRoutes = require('./src/routes/authRoutes');
+
+app.use(mainRoutes);
+app.use(shopRoutes);
+app.use(adminRoutes);
 app.use(authRoutes);
 
 // const productRoutes = require("./scr/routes/admin/adminRoutes");
- // app.use(productRoutes);
+// app.use(productRoutes);
 // app.use('/admin', productRoutes);
 
 
