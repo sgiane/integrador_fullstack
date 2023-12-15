@@ -19,6 +19,8 @@ app.set('layout', "layouts/layout");
 app.use(express.urlencoded({extended:false}));
 app.use(methosOverride("_method"));
 
+// app.use(require("./src/routes/authRoutes"));
+
 const mainRoutes = require('./src/routes/mainRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
