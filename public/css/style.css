@@ -855,7 +855,7 @@ main {
 
 .main-containershop {
    display: grid;
-   grid-template-columns: 300px 2fr;
+   grid-template-columns: 200px 2fr;
    grid-template-rows: 1fr;
    grid-template-areas:
       "aside main"
@@ -864,6 +864,7 @@ main {
 
 .filter__item {
    display: flex;
+   padding: 0;
 }
 
 .filter__item form>* {
@@ -1453,9 +1454,9 @@ input[type=number] {
 
    /* RESPONSIVE SHOP */
 
-   .filter__item {
+   /* .filter__item {
       padding-left: var(--spacing-68);
-   }
+   } */
 
 
 

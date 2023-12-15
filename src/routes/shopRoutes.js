@@ -1,12 +1,16 @@
 const express = require("express");
 const router = express.Router();
+
 const shopController = require("../controllers/shopController");
 
 //RUTAS TIENDA
 
 router.get('/shop', shopController.shop);
-router.get('/items', shopController.item);
-router.get('/carrito', shopController.cart);
+
+// router.get('/items/:id', shopController.item);
+// router.post('/items/:id/add', shopController.itemAdd);
+// router.get('/cart', shopController.cart);
+// router.post('/cart', shopController.cart);
 
 
 // // - GET -> /shop
