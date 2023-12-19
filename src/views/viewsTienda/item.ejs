@@ -2,21 +2,20 @@
     <section class="item__card">
         <article class="item__card-yoda">
             <picture class="card-item__img">
-                <img class="card-item__img--front" src="../multimedia/star-wars/baby-yoda-1.webp"
+                <img class="card-item__img--front" src="<%= producto.product_id %>"
                     alt="Figura coleccionable de Funko Baby Yoda">
                 <img class="card-item__img--back" src="../multimedia/star-wars/baby-yoda-box.webp"
                     alt="Figura coleccionable de Funko Baby Yoda Box">
             </picture>
             <div class="card-item__content">
-                <p class="item-card__licence">STAR WARS</p>
-                <h3 class="item-card__name">BABY YODA BLUEBALL</h3>
-                <p class="item-card__description">Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga,
-                    edición limitada.</p>
-                <p class="item-card__price">$ 1.799,99</p>
+                <p class="item-card__licence"><%=producto.licence_name%></p>
+                <h3 class="item-card__name"><%=producto.product_name%></h3>
+                <p class="item-card__description"><%=producto.description%></p>
+                <p class="item-card__price">$<%=producto.price%></p>
                 <div class="item__cart">
                     <button id="subtract" class="item__quantity" type="button">-</button>
                     <input class="input__item-num" type="text" name="quantity" id="quantity" placeholder="0">
-                    <button id="add" class="item__quantity" type="button">+</button>
+                    <button id="add" class="item__quantity" type="button"></button>
                     <button class="btn-agregar" value="agregar">Agregar al carrito</button>
                 </div>
 
@@ -28,5 +27,7 @@
         <h2 class="slider__title">PRODUCTOS RELACIONADOS</h2>
     </section>
     <!-- SLIDER-->
+
+    <%- include ('../partials/tienda/slider') %>
+
 </main>
-<%- include ('../partials/tienda/slider') %>
