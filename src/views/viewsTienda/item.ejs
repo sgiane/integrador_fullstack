@@ -2,7 +2,7 @@
     <section class="item__card">
         <article class="item__card-yoda">
             <picture class="card-item__img">
-                <img class="card-item__img--front" src="<%= producto.product_id %>"
+                <img class="card-item__img--front" src="/upload/producto_<%= producto.id %>.webp"
                     alt="Figura coleccionable de Funko Baby Yoda">
                 <img class="card-item__img--back" src="../multimedia/star-wars/baby-yoda-box.webp"
                     alt="Figura coleccionable de Funko Baby Yoda Box">
@@ -15,11 +15,11 @@
                 <div class="item__cart">
                     <button id="subtract" class="item__quantity" type="button">-</button>
                     <input class="input__item-num" type="text" name="quantity" id="quantity" placeholder="0">
-                    <button id="add" class="item__quantity" type="button"></button>
+                    <button id="add" class="item__quantity" type="button">+</button>
                     <button class="btn-agregar" value="agregar">Agregar al carrito</button>
                 </div>
 
-                <p class="item-card__cuotas"><a class="item-card__link" href="#">Ver métodos de pago</a> - 3 CUOTAS
+                <p class="item-card__cuotas"><a class="item-card__link" href="#">Ver métodos de pago</a> - <%=producto.dues%> CUOTAS
                     SIN INTERES</p>
 
             </div>
