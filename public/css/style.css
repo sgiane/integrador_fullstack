@@ -311,8 +311,9 @@ header {
 
 .slider__title {
    font-family: var(--font-alternativa);
-   font-size: var(--font-display2);
+   font-size: var(--font-jumbo);
    padding-bottom: var(--spacing-16);
+   margin-left: 2em;
 }
 
 .icon__slider {
@@ -1307,6 +1308,10 @@ input[type=number] {
    font-size: var(--font-medium);
    text-align: center;
    border-radius: .2em;
+}
+
+.card-item__img--front{
+   margin: auto;
 }
 
 

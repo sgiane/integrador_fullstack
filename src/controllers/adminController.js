@@ -134,7 +134,7 @@ const edit = async (req, res) => {
           .toFile(
             path.resolve(
               __dirname,
-              `../../public/upload/producto_${req.params.id}.webp`
+              `../upload/producto_${req.params.id}.webp`
             )
           );
       }
