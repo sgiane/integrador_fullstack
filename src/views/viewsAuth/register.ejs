@@ -3,7 +3,15 @@
         <h1 class="register__title">CREA TU CUENTA</h1>
         <h3 class="register__subtitulo">Completa el formulario para ser parte del mundo de los Funkos</h3>
 
-        <form action="register.ejs" method="post">
+        <% if (typeof errors != 'undefined') { %>
+            <ul>
+              <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+              <% }) %>
+            </ul>
+            <% } %>
+
+        <form action="/register" method="post">
 
             <label class="label__input label__register" 
             for="name">Nombre:</label>
@@ -11,7 +19,7 @@
             type="text" 
             name="name" 
             id="name" 
-            placeholder="Nombre" required>
+            placeholder="Nombre" required />
 
             <label class="label__input label__register" 
             for="lasname">Apellido:</label>
@@ -19,7 +27,7 @@
             type="text" 
             name="lastname"
             id="lastname"
-             placeholder="Apellido" required>
+             placeholder="Apellido" required />
 
             <label class="label__input label__register" 
             for="email">Email:</label>
@@ -28,7 +36,7 @@
             name="email" 
             id="email" 
             value="<%= typeof values != 'undefined' ? values.email : '' %>"
-            placeholder="Email" required>
+            placeholder="Email" required />
 
             <label class="label__input label__register"
              for="password">Contraseña:</label>
@@ -37,21 +45,22 @@
             name="password"
             id="password"
             autocomplete= "off"
-            placeholder="************" required>
+            placeholder="************" required />
             
 
             <label class="label__input label__register" 
             for="password">Repita Contraseña:</label>
             <input class="input__item input__register" 
-            type="password" 
-            name="password"
-            placeholder="************" required>
+            type="password_confirmation" 
+            name="password_confirmation"
+            autocomplete= "off"
+            placeholder="************" required />
 
             <div class="register__btn">
                 <button class="btn reg-btn">Registrar</button>
                 <div class="terminos">
                     <input class="input__terminos" 
-                    type="checkbox" name="terminos" id="terminos">
+                    type="checkbox" name="terminos" id="terminos" />
                     <label class="label__terminos" 
                     for="terminos">Acepto <span> "Términos y Condiciones</span></label>
                 </div>
