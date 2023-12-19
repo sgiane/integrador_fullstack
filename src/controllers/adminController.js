@@ -154,23 +154,25 @@ const  destroy = async (req, res) => {
 
   try {
     const destroyed = await modelProduct.destroy({
-      where:{
+      where: {
         id: req.params.id,
       },
     });
       console.log(destroyed);
 
       
-    // if (destroyed == 1) {
-    //   fs.unlink(
-    //     path.resolve(__dirname, `../../public/upload/producto_${req.params.id}.webp`)
-    //   ),
-    //   (error) => {
-    //     if (error) {
-    //       console.log(error);
-    //     }
-    //   };
-    // }
+    if (destroyed == 1) {
+      fs.unlink(
+        path.resolve(__dirname, `/public/upload/producto_${req.params.id}.webp`),
+
+      (error) => {
+        if (error) {
+          console.log(error);
+        }
+      }
+      );
+      
+    }
 
     res.redirect("/admin");
 

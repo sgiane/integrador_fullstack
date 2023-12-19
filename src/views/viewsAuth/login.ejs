@@ -1,7 +1,14 @@
 <main class="container">
     <section class="form__login">
+        <% if (typeof errors != 'undefined') { %>
+            <ul>
+              <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+              <% }) %>
+            </ul>
+            <% } %>
         
-        <form action= "login.ejs" method="post">
+        <form action= "/login" method="post">
             <h1 class="login__title">INGRESAR A MI CUENTA</h1>
 
                 <label class="label__input-login" 
