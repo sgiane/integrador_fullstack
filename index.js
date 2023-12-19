@@ -31,10 +31,6 @@ app.use(shopRoutes);
 app.use(adminRoutes);
 app.use(authRoutes);
 
-// const productRoutes = require("./scr/routes/admin/adminRoutes");
-// app.use(productRoutes);
-// app.use('/admin', productRoutes);
-
 
 app.use((req, res, next) => {
     res.status(404).send("La pagina no existe");

@@ -24,22 +24,22 @@ const shop = async (req, res) => {
 
 
 
-// const item = async (req, res) => {
+const item = async (req, res) => {
 
-//     try {
-//         const producto = await modelProducts.findByPk(req.params.id);
+    try {
+        const producto = await modelProducts.findByPk(req.params.id);
 
-//         if (producto){
-//             res.render('viewsTienda/item', {layout: "layouts/layoutTienda", producto})
-//         } else {
-//             res.redirect("viewsTienda/shop")
-//         }
-//         ;
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).send(error);
-//     }
-// };
+        if (producto){
+            res.render('viewsTienda/item', {layout: "layouts/layoutTienda", producto})
+        } else {
+            res.redirect("viewsTienda/shop")
+        }
+        ;
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+};
 
 
 // const itemAdd = async (req, res) => {
@@ -69,7 +69,7 @@ const shop = async (req, res) => {
 
 module.exports = {
     shop,
-    // item,
+    item,
     // cart,
     // itemAdd,
 
