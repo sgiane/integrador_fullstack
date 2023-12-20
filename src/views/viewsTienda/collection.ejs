@@ -1,0 +1,42 @@
+<main class="main__container-shop container">
+
+    <section class="main__cards">
+
+        <%if (typeof productos !='undefined' ) { %>
+
+            <% productos.forEach(producto=> { %>
+                <article class="cards">
+                    <a href="/items/<%=producto.id%>">
+                    <picture class="card-item__img">
+                        <span class="card-item__tag">NUEVO</span>
+                        
+                            <img class="card-item__img--front" src="/upload/producto_<%= producto.id %>.webp"
+                                alt="<%=producto.product_description%>">
+                            <img class="card-item__img--back" src="/public/multimedia/star-wars/baby-yoda-box.webp"
+                            alt="<%=producto.product_description%>">
+                    </picture>
+                    <div class="card__description">
+                        <h6 class="card-item__licence"><%=producto.licence_name%></h6>
+                        <h3 class="card-item__name"><%=producto.product_name%></h3>
+                        <p class="card-item__price">$<%=producto.price%></p>
+                        <p class="card-item__cuotas"><%=producto.dues%> - Cuotas sin intereses. </p>
+                    </div>
+                    </a>
+                </article>
+                <% }) %>
+
+                    <% } %>
+
+    </section>
+
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+</main>
