@@ -8,8 +8,12 @@ const shopController = require("../controllers/shopController");
 router.get('/shop', shopController.shop);
 
 router.get('/items/:id', shopController.item);
+
+// router.get('/collection', shopController.collection);
+
+// router.get('/slider', shopController.slider);
 // router.post('/items/:id/add', shopController.itemAdd);
-// router.get('/cart', shopController.cart);
+router.get('/carrito', shopController.cart);
 // router.post('/cart', shopController.cart);
 
 

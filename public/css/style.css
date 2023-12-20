@@ -843,7 +843,7 @@ input[type="file"] {
 .main__container-shop {
 
    margin-top: var(--spacing-24);
-   margin-bottom: var(--spacing-36);
+   margin-bottom: var(--spacing-48);
    display: grid;
    grid-template-columns: 20em 2fr;
    grid-template-rows: 2fr 10em;
@@ -864,7 +864,7 @@ padding: var(--spacing-68)    var(--spacing-128);
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    grid-template-rows: auto;
-   gap: var(--spacing-24);
+   gap: var(--spacing-36);
    margin-top: var(--spacing-28);
 
 }

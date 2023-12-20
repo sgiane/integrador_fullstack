@@ -1,10 +1,12 @@
 require("dotenv").config();
+// const fs = require("fs");
 
 const express = require("express");
 const app = express();
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
 const methosOverride = require("method-override");
+// const multer = require('multer');
 
 // const session = require("express-session");
 
@@ -35,7 +37,9 @@ const isLogin = (req, res, next) => {
 
 const sequelize = require("./src/config/connect");
 
+
 app.use(express.static(__dirname + "/public"));
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./src/views"));
@@ -58,6 +62,21 @@ app.use(shopRoutes);
 app.use(isLogin, adminRoutes);
 // app.use(authRoutes);
 
+
+// const upload = multer({dest: 'public/upload/'});
+
+// app.post('/uploadImages', upload.single('imagen'), (req, res) =>{
+
+//     console.log(req.file); 
+//     savaImage(req.file);    
+//     res.send('Imagen cargada');
+// })
+
+// function savaImage(file){
+//     const newPath = `./public/upload/producto_${product.id}`;
+//     fs.renameSync(file.path, newPath);
+//     return newPath;
+// }
 
 app.use((req, res, next) => {
     res.status(404).send("La pagina no existe");
