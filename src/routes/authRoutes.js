@@ -44,29 +44,29 @@ const registerValidations = [
       .withMessage("Las contraseñas no coinciden"),
   ];
   
-//   const loginValidations = [
-//     body("email")
-//       .isEmail()
-//       .withMessage("Ingrese una dirección de correo electrónico válida"),
-//     body("password")
-//       .isStrongPassword({
-//         minLength: 6,
-//         minLowercase: 1,
-//         minUppercase: 1,
-//         minNumbers: 1,
-//         minSymbols: 1,
-//       })
-//       .withMessage("La contraseña debe tener ..."),
-//   ];
+  const loginValidations = [
+    body("email")
+      .isEmail()
+      .withMessage("Ingrese una dirección de correo electrónico válida"),
+    body("password")
+      .isStrongPassword({
+        minLength: 6,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+      .withMessage("La contraseña debe tener ..."),
+  ];
 
 const authController = require("../controllers/authController");
 
 
-// router.get('/login', authController.login);
-// router.post('/login', authController.postLogin);
+router.get('/login', authController.login);
+router.post('/login', loginValidations, authController.postLogin);
 router.get('/register', authController.register);
 router.post('/register', registerValidations, authController.postRegister);
-// router.get('/logout', authController.logout); 
+router.get('/logout', authController.logout); 
 
 
 // GET -> /auth/login

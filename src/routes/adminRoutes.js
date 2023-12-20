@@ -3,6 +3,8 @@ const router = express.Router();
 const multer = require("multer");
 const upload = multer({storage:multer.memoryStorage() });
 
+
+
 const { body } = require("express-validator");
 
 const validations = [
@@ -26,10 +28,10 @@ const adminController = require("../controllers/adminController");
 router.get('/admin', adminController.admin);
 
 router.get('/admin/create', adminController.create);
-router.post("/admin/create", upload.single("imagen"), adminController.createProduct);
+router.post("/admin/create", upload.single('imagen'), adminController.createProduct);
 
 router.get("/admin/edit/:id", adminController.edit);
-router.put("/admin/:id", upload.single("imagen"), validations,  adminController.update);
+router.put("/admin/:id", upload.single('imagen'), validations,  adminController.update);
 
 router.delete('/admin/:id', adminController.destroy);
 // - GET -> /admin
