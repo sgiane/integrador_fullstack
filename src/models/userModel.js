@@ -1,9 +1,10 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/connect");
+const bcryptjs = require("bcryptjs");
 
 //Tabla Usuarios
 
-const User = sequelize.define('user', {
+const userModel = sequelize.define('user', {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -28,8 +29,15 @@ const User = sequelize.define('user', {
 }
 );
 
+userModel.beforeSave(async (user, options) =>{
+    const { password } = user;
+    const hash = await bcryptjs.hash(password, 8);
+
+    user.password = hash;
+});
+
 (async () => {
     await sequelize.sync();
 })();
 
-module.exports = User;
+module.exports = userModel;
