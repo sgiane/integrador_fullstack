@@ -38,7 +38,7 @@ const isLogin = (req, res, next) => {
 const sequelize = require("./src/config/connect");
 
 
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 
 app.set("view engine", "ejs");
